@@ -38,6 +38,29 @@ filterBtns.forEach((btn) => {
   });
 });
 
+// Theme toggle
+const themeToggle = document.getElementById("themeToggle");
+const userTheme = localStorage.getItem("theme");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+function applyTheme(theme) {
+  if (theme === "light") {
+    document.body.classList.add("light-theme");
+    themeToggle.setAttribute("aria-label", "Activate dark mode");
+  } else {
+    document.body.classList.remove("light-theme");
+    themeToggle.setAttribute("aria-label", "Activate light mode");
+  }
+  localStorage.setItem("theme", theme);
+}
+
+applyTheme(userTheme || (prefersDark ? "dark" : "light"));
+
+themeToggle.addEventListener("click", () => {
+  const nextTheme = document.body.classList.contains("light-theme") ? "dark" : "light";
+  applyTheme(nextTheme);
+});
+
 // Hamburger menu toggle
 const hamburgerBtn = document.getElementById("hamburgerBtn");
 const navLinks = document.getElementById("navLinks");
