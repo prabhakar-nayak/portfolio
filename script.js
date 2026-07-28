@@ -57,7 +57,9 @@ function applyTheme(theme) {
 applyTheme(userTheme || (prefersDark ? "dark" : "light"));
 
 themeToggle.addEventListener("click", () => {
-  const nextTheme = document.body.classList.contains("light-theme") ? "dark" : "light";
+  const nextTheme = document.body.classList.contains("light-theme")
+    ? "dark"
+    : "light";
   applyTheme(nextTheme);
 });
 

@@ -1126,7 +1126,10 @@ h2.role .grad {
   font-weight: 600;
   padding: 10px 18px;
   border-radius: 20px;
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .live-demo-btn {
