@@ -39,6 +39,42 @@ filterBtns.forEach((btn) => {
 });
 
 // Theme toggle
+const heroSection = document.querySelector(".hero");
+const mouseGlow = document.querySelector(".mouse-glow");
+const roleText = document.getElementById("roleText");
+
+if (heroSection && mouseGlow) {
+  heroSection.addEventListener("mousemove", (event) => {
+    const rect = heroSection.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    mouseGlow.style.left = `${x}px`;
+    mouseGlow.style.top = `${y}px`;
+    mouseGlow.style.opacity = "1";
+  });
+
+  heroSection.addEventListener("mouseleave", () => {
+    mouseGlow.style.opacity = "0";
+  });
+}
+
+if (roleText) {
+  const rolePhrase = "MERN Full Stack Developer";
+  let index = 0;
+
+  const typeRole = () => {
+    roleText.textContent = rolePhrase.slice(0, index);
+    index += 1;
+
+    if (index <= rolePhrase.length) {
+      window.setTimeout(typeRole, 80);
+    }
+  };
+
+  typeRole();
+}
+
 const themeToggle = document.getElementById("themeToggle");
 const userTheme = localStorage.getItem("theme");
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
