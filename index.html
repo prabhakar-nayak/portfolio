@@ -3,7 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Prabhakar Moodu is a MERN Full Stack Developer building modern, responsive web applications with React, Node.js, Express, and MongoDB."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0a0e1a" />
+    <meta property="og:title" content="Prabhakar Moodu | MERN Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Prabhakar Moodu, a MERN Full Stack Developer focused on scalable, responsive web experiences."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://prabhakarmoodu.github.io/portfolio/" />
+    <meta property="og:image" content="https://prabhakarmoodu.github.io/portfolio/assets/profile.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Prabhakar Moodu | MERN Full Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Prabhakar Moodu, a MERN Full Stack Developer focused on modern web applications."
+    />
+    <meta name="twitter:image" content="https://prabhakarmoodu.github.io/portfolio/assets/profile.jpg" />
+    <link rel="canonical" href="https://prabhakarmoodu.github.io/portfolio/" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <title>Prabhakar Moodu | MERN Full Stack Developer</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Prabhakar Moodu",
+        "jobTitle": "MERN Full Stack Developer",
+        "url": "https://prabhakarmoodu.github.io/portfolio/",
+        "sameAs": [
+          "https://github.com/prabhakar-nayak",
+          "https://www.linkedin.com/in/prabhakar-moodu"
+        ],
+        "description": "Developer focused on full-stack web applications with React, Node.js, Express, and MongoDB."
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,6 +50,22 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="loading-screen" id="loadingScreen" aria-hidden="true">
+      <div class="loading-card">
+        <div class="loading-mark">P</div>
+        <div class="loading-copy">
+          <span>Loading Portfolio...</span>
+          <div class="loading-bar">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
     <nav>
       <div class="nav-inner">
         <div class="logo">PRABHAKAR</div>
@@ -112,7 +165,7 @@
     </nav>
 
     <div class="wrap page-content">
-      <section class="hero" id="home">
+      <section class="hero reveal" id="home">
         <div class="hero-ambient" aria-hidden="true">
           <div class="mouse-glow"></div>
           <div class="hero-particles">
@@ -257,33 +310,95 @@
         </div>
       </section>
 
-      <section class="about-section" id="about">
+      <section class="terminal-section reveal" aria-labelledby="terminalHeading">
+        <div class="terminal-window">
+          <div class="terminal-bar">
+            <div class="terminal-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="terminal-title" id="terminalHeading">Developer Terminal</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line"><span class="terminal-prompt">&gt;</span> whoami</div>
+            <div class="terminal-line terminal-output">Prabhakar Moodu</div>
+            <div class="terminal-line"><span class="terminal-prompt">&gt;</span> role</div>
+            <div class="terminal-line terminal-output">MERN Full Stack Developer</div>
+            <div class="terminal-line"><span class="terminal-prompt">&gt;</span> location</div>
+            <div class="terminal-line terminal-output">Hyderabad, India</div>
+            <div class="terminal-line"><span class="terminal-prompt">&gt;</span> skills</div>
+            <div class="terminal-line terminal-output">React · Node.js · Express · MongoDB</div>
+            <div class="terminal-line"><span class="terminal-prompt">&gt;</span> status</div>
+            <div class="terminal-line terminal-output">Open to Software Development Opportunities</div>
+            <div class="terminal-line terminal-cursor"><span class="terminal-prompt">&gt;</span> <span class="terminal-blink"></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section reveal" id="about">
         <div class="about-header">
           <span class="eyebrow">ABOUT</span>
           <h2>About Me</h2>
         </div>
 
         <div class="about-grid">
-          <div class="about-text">
-            <p>
-              I'm a passionate <strong>MERN Full Stack Developer</strong> with
-              hands-on experience building
-              <strong>5+ real-world full-stack applications</strong> — from
-              e-commerce and video streaming to interview scheduling and REST
-              API backends.
-            </p>
-            <p>
-              I completed intensive full-stack training at
-              <strong>NxtWave</strong> and have internship experience building
-              responsive, performant web applications end-to-end.
-            </p>
-            <p>
-              Outside coding, I enjoy learning about finance, startups, AI
-              tools, and continuously improving my software engineering skills.
-            </p>
+          <div class="about-text-card">
+            <div class="about-text">
+              <p>
+                I'm a passionate <strong>MERN Full Stack Developer</strong> with
+                hands-on experience building
+                <strong>5+ real-world full-stack applications</strong> — from
+                e-commerce and video streaming to interview scheduling and REST
+                API backends.
+              </p>
+              <p>
+                I completed intensive full-stack training at
+                <strong>NxtWave</strong> and have internship experience building
+                responsive, performant web applications end-to-end.
+              </p>
+              <p>
+                Outside coding, I enjoy learning about finance, startups, AI
+                tools, and continuously improving my software engineering skills.
+              </p>
+            </div>
+            <div class="about-learning-card">
+              <span class="eyebrow">CURRENTLY LEARNING</span>
+              <p>Advanced React Patterns, System Design, and AI-assisted development workflows.</p>
+            </div>
           </div>
 
-          <div class="skill-cards">
+          <div class="about-side-card">
+            <div class="about-profile-card">
+              <img src="assets/profile.jpg" alt="Prabhakar Moodu portrait" loading="lazy" decoding="async" />
+              <div class="about-profile-body">
+                <span class="eyebrow">PERSONAL INTERESTS</span>
+                <p>Finance, startups, modern UI systems, and building thoughtful digital products.</p>
+              </div>
+            </div>
+
+            <div class="quick-facts-grid">
+              <div class="quick-fact-card">
+                <span>Location</span>
+                <strong>Hyderabad, India</strong>
+              </div>
+              <div class="quick-fact-card">
+                <span>Education</span>
+                <strong>B.E. Electronics</strong>
+              </div>
+              <div class="quick-fact-card">
+                <span>Experience</span>
+                <strong>3+ Internships</strong>
+              </div>
+              <div class="quick-fact-card">
+                <span>Projects</span>
+                <strong>5+ Built</strong>
+              </div>
+              <div class="quick-fact-card">
+                <span>Availability</span>
+                <strong>Open to Work</strong>
+              </div>
+            </div>
+
+            <div class="skill-cards">
             <div class="skill-card">
               <div class="skill-icon">
                 <svg
@@ -368,7 +483,7 @@
         </div>
       </section>
 
-      <section class="skills-section" id="skills">
+      <section class="skills-section reveal" id="skills">
         <div class="skills-header">
           <span class="eyebrow">TOOLBOX</span>
           <h2>Skills &amp; <span class="grad">Technologies</span></h2>
@@ -379,73 +494,68 @@
         </div>
 
         <div class="skills-grid">
-          <div class="skills-card">
+          <div class="skills-card reveal">
             <span class="eyebrow">LANGUAGES</span>
             <div class="skill-tags">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">C</span>
+              <div class="skill-badge"><span class="skill-icon">Py</span><span>Python</span></div>
+              <div class="skill-badge"><span class="skill-icon">JS</span><span>JavaScript</span></div>
+              <div class="skill-badge"><span class="skill-icon">C</span><span>C</span></div>
             </div>
           </div>
 
-          <div class="skills-card">
+          <div class="skills-card reveal">
             <span class="eyebrow">FRONTEND</span>
             <div class="skill-tags">
-              <span class="skill-tag">React.js</span>
-              <span class="skill-tag">HTML5</span>
-              <span class="skill-tag">CSS3</span>
-              <span class="skill-tag">Tailwind CSS</span>
-              <span class="skill-tag">Bootstrap</span>
-              <span class="skill-tag">Responsive Design</span>
-              <span class="skill-tag">Flexbox</span>
-              <span class="skill-tag">CSS Grid</span>
+              <div class="skill-badge"><span class="skill-icon">R</span><span>React.js</span></div>
+              <div class="skill-badge"><span class="skill-icon">H</span><span>HTML5</span></div>
+              <div class="skill-badge"><span class="skill-icon">C</span><span>CSS3</span></div>
+              <div class="skill-badge"><span class="skill-icon">T</span><span>Tailwind CSS</span></div>
+              <div class="skill-badge"><span class="skill-icon">B</span><span>Bootstrap</span></div>
+              <div class="skill-badge"><span class="skill-icon">R</span><span>Responsive</span></div>
             </div>
           </div>
 
-          <div class="skills-card">
+          <div class="skills-card reveal">
             <span class="eyebrow">BACKEND</span>
             <div class="skill-tags">
-              <span class="skill-tag">Node.js</span>
-              <span class="skill-tag">Express.js</span>
-              <span class="skill-tag">REST APIs</span>
-              <span class="skill-tag">JWT Auth</span>
+              <div class="skill-badge"><span class="skill-icon">N</span><span>Node.js</span></div>
+              <div class="skill-badge"><span class="skill-icon">E</span><span>Express.js</span></div>
+              <div class="skill-badge"><span class="skill-icon">A</span><span>REST APIs</span></div>
+              <div class="skill-badge"><span class="skill-icon">J</span><span>JWT Auth</span></div>
             </div>
           </div>
 
-          <div class="skills-card">
+          <div class="skills-card reveal">
             <span class="eyebrow">DATABASES</span>
             <div class="skill-tags">
-              <span class="skill-tag">MongoDB</span>
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">SQLite</span>
-              <span class="skill-tag">SQL</span>
+              <div class="skill-badge"><span class="skill-icon">M</span><span>MongoDB</span></div>
+              <div class="skill-badge"><span class="skill-icon">S</span><span>MySQL</span></div>
+              <div class="skill-badge"><span class="skill-icon">S</span><span>SQLite</span></div>
+              <div class="skill-badge"><span class="skill-icon">Q</span><span>SQL</span></div>
             </div>
           </div>
 
-          <div class="skills-card">
+          <div class="skills-card reveal">
             <span class="eyebrow">TOOLS</span>
             <div class="skill-tags">
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">GitHub</span>
+              <div class="skill-badge"><span class="skill-icon">G</span><span>Git</span></div>
+              <div class="skill-badge"><span class="skill-icon">GH</span><span>GitHub</span></div>
             </div>
           </div>
 
-          <div class="skills-card">
+          <div class="skills-card reveal">
             <span class="eyebrow">CORE CONCEPTS</span>
             <div class="skill-tags">
-              <span class="skill-tag">OOP</span>
-              <span class="skill-tag">API Integration</span>
-              <span class="skill-tag">React Hooks</span>
-              <span class="skill-tag">Data Structures</span>
-              <span class="skill-tag">SQL Joins</span>
-              <span class="skill-tag">Subqueries</span>
-              <span class="skill-tag">Aggregations</span>
+              <div class="skill-badge"><span class="skill-icon">O</span><span>OOP</span></div>
+              <div class="skill-badge"><span class="skill-icon">A</span><span>API Integration</span></div>
+              <div class="skill-badge"><span class="skill-icon">H</span><span>React Hooks</span></div>
+              <div class="skill-badge"><span class="skill-icon">D</span><span>Data Structures</span></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="certifications-section" id="certifications">
+      <section class="certifications-section reveal" id="certifications">
         <div class="skills-header">
           <span class="eyebrow">CERTIFICATIONS</span>
           <h2>Professional <span class="grad">Certificates</span></h2>
@@ -564,7 +674,7 @@
         </div>
       </section>
 
-      <section class="experience-section" id="experience">
+      <section class="experience-section reveal" id="experience">
         <div class="experience-header">
           <span class="eyebrow">JOURNEY</span>
           <h2>Exp<span class="grad">erience</span></h2>
@@ -673,7 +783,7 @@
         </div>
       </section>
 
-      <section class="projects-section" id="projects">
+      <section class="projects-section reveal" id="projects">
         <div class="projects-header">
           <span class="eyebrow">SELECTED WORK</span>
           <h2>Featured <span class="grad">Projects</span></h2>
@@ -967,7 +1077,84 @@
         </div>
       </section>
 
-      <section class="education-section" id="education">
+      <section class="github-activity-section reveal" aria-labelledby="githubActivityHeading">
+        <div class="projects-header">
+          <span class="eyebrow">GITHUB</span>
+          <h2 id="githubActivityHeading">GitHub <span class="grad">Activity</span></h2>
+          <p class="subtext">Recent coding activity and project momentum, ready for live GitHub API integration.</p>
+        </div>
+
+        <div class="github-grid">
+          <div class="github-card github-profile-card reveal">
+            <div class="github-avatar">P</div>
+            <div>
+              <h3>Prabhakar Moodu</h3>
+              <p>@prabhakar-nayak</p>
+            </div>
+            <div class="github-metrics">
+              <div><strong>18</strong><span>Repos</span></div>
+              <div><strong>240+</strong><span>Contrib</span></div>
+              <div><strong>12</strong><span>Streak</span></div>
+            </div>
+          </div>
+
+          <div class="github-card reveal">
+            <span class="eyebrow">CONTRIBUTION GRAPH</span>
+            <div class="activity-graph" aria-label="Contribution graph placeholder">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <div class="github-card reveal">
+            <span class="eyebrow">MOST USED LANGUAGES</span>
+            <ul class="language-list">
+              <li><span>JavaScript</span><strong>42%</strong></li>
+              <li><span>Python</span><strong>28%</strong></li>
+              <li><span>HTML/CSS</span><strong>20%</strong></li>
+              <li><span>SQL</span><strong>10%</strong></li>
+            </ul>
+          </div>
+
+          <div class="github-card reveal">
+            <span class="eyebrow">RECENT REPOSITORIES</span>
+            <ul class="repo-list">
+              <li>HireSync</li>
+              <li>StreamTube</li>
+              <li>Nxt Trendz</li>
+              <li>Twitter Clone Backend</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-section reveal" aria-labelledby="statsHeading">
+        <div class="projects-header">
+          <span class="eyebrow">NUMBERS</span>
+          <h2 id="statsHeading">Portfolio <span class="grad">Stats</span></h2>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card reveal">
+            <strong class="stat-value" data-target="5">0</strong>
+            <span>Projects Completed</span>
+          </div>
+          <div class="stat-card reveal">
+            <strong class="stat-value" data-target="12">0</strong>
+            <span>Technologies Learned</span>
+          </div>
+          <div class="stat-card reveal">
+            <strong class="stat-value" data-target="3">0</strong>
+            <span>Internships</span>
+          </div>
+          <div class="stat-card reveal">
+            <strong class="stat-value" data-target="8">0</strong>
+            <span>Certificates</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="education-section reveal" id="education">
         <div class="education-header">
           <span class="eyebrow">ACADEMICS</span>
           <h2>Ed<span class="grad">ucation</span></h2>
@@ -1115,7 +1302,7 @@
         </div>
       </section>
 
-      <section class="contact-section" id="contact">
+      <section class="contact-section reveal" id="contact">
         <div class="contact-header">
           <span class="eyebrow">GET IN TOUCH</span>
           <h2>
@@ -1234,7 +1421,7 @@
             </div>
           </div>
 
-          <form class="contact-form" id="contact-form">
+          <form class="contact-form" id="contact-form" novalidate>
             <div class="form-row">
               <div class="form-group">
                 <label for="name">NAME</label>
@@ -1244,7 +1431,9 @@
                   name="name"
                   placeholder="Your name"
                   required
+                  aria-describedby="name-error"
                 />
+                <div class="form-error" id="name-error"></div>
               </div>
               <div class="form-group">
                 <label for="email">EMAIL</label>
@@ -1254,7 +1443,9 @@
                   name="email"
                   placeholder="you@company.com"
                   required
+                  aria-describedby="email-error"
                 />
+                <div class="form-error" id="email-error"></div>
               </div>
             </div>
 
@@ -1266,7 +1457,9 @@
                 name="subject"
                 placeholder="Full Stack Developer opportunity"
                 required
+                aria-describedby="subject-error"
               />
+              <div class="form-error" id="subject-error"></div>
             </div>
 
             <div class="form-group full">
@@ -1276,10 +1469,14 @@
                 name="message"
                 placeholder="Tell me about the role or project..."
                 required
+                aria-describedby="message-error"
               ></textarea>
+              <div class="form-error" id="message-error"></div>
             </div>
 
-            <button type="submit" class="submit-btn">
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -1291,7 +1488,8 @@
                 <line x1="22" y1="2" x2="11" y2="13" />
                 <polygon points="22 2 15 22 11 13 2 9 22 2" />
               </svg>
-              Send Message
+              <span class="btn-label">Send Message</span>
+              <span class="btn-spinner" aria-hidden="true"></span>
             </button>
           </form>
         </div>
@@ -1340,7 +1538,8 @@
           </div>
 
           <div class="footer-copyright">
-            © 2026 Prabhakar Moodu. All rights reserved.
+            <span>© <span id="currentYear"></span> Prabhakar Moodu. All rights reserved.</span>
+            <span class="footer-meta">Made with HTML · CSS · JavaScript · Last updated <span id="lastUpdated">2026</span></span>
           </div>
         </div>
       </div>
@@ -1359,6 +1558,14 @@
         <polyline points="5 12 12 5 19 12" />
       </svg>
     </button>
+
+    <div class="modal" id="certificateModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Close certificate preview">×</button>
+        <h3 id="modalTitle">Certificate Preview</h3>
+        <img id="modalImage" src="assets/IRC.jpg" alt="Certificate preview" />
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
