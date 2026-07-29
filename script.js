@@ -6,10 +6,26 @@ const contactForm = document.getElementById("contact-form");
 const formStatus = document.getElementById("formStatus");
 const submitBtn = document.getElementById("submitBtn");
 const requiredFields = [
-  { id: "name", errorId: "name-error", validator: (value) => value.trim().length >= 2 },
-  { id: "email", errorId: "email-error", validator: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) },
-  { id: "subject", errorId: "subject-error", validator: (value) => value.trim().length >= 3 },
-  { id: "message", errorId: "message-error", validator: (value) => value.trim().length >= 10 },
+  {
+    id: "name",
+    errorId: "name-error",
+    validator: (value) => value.trim().length >= 2,
+  },
+  {
+    id: "email",
+    errorId: "email-error",
+    validator: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+  },
+  {
+    id: "subject",
+    errorId: "subject-error",
+    validator: (value) => value.trim().length >= 3,
+  },
+  {
+    id: "message",
+    errorId: "message-error",
+    validator: (value) => value.trim().length >= 10,
+  },
 ];
 
 function validateForm() {
@@ -35,7 +51,8 @@ contactForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   if (!validateForm()) {
-    formStatus.textContent = "Please complete the highlighted fields before sending.";
+    formStatus.textContent =
+      "Please complete the highlighted fields before sending.";
     return;
   }
 
@@ -46,7 +63,8 @@ contactForm.addEventListener("submit", function (event) {
   emailjs
     .sendForm("service_ls4nzew", "template_3n7ejcq", contactForm)
     .then(() => {
-      formStatus.textContent = "Message sent successfully! I’ll get back to you soon.";
+      formStatus.textContent =
+        "Message sent successfully! I’ll get back to you soon.";
       contactForm.reset();
       requiredFields.forEach(({ errorId }) => {
         document.getElementById(errorId).textContent = "";
@@ -185,7 +203,9 @@ const lastUpdated = document.getElementById("lastUpdated");
 const modal = document.getElementById("certificateModal");
 const modalClose = document.getElementById("modalClose");
 const modalImage = document.getElementById("modalImage");
-const certificateLinks = document.querySelectorAll(".featured-certification-image, .certification-card");
+const certificateLinks = document.querySelectorAll(
+  ".featured-certification-image, .certification-card",
+);
 const revealElements = document.querySelectorAll(".reveal");
 const statValues = document.querySelectorAll(".stat-value");
 
@@ -276,7 +296,10 @@ statValues.forEach((stat) => {
 
 certificateLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
-    if (link.classList.contains("certification-card") && !link.href.startsWith("http")) {
+    if (
+      link.classList.contains("certification-card") &&
+      !link.href.startsWith("http")
+    ) {
       event.preventDefault();
       modalImage.src = "assets/IRC.jpg";
       modal.hidden = false;
