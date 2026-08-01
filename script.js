@@ -119,7 +119,7 @@ if (heroSection && mouseGlow) {
 }
 
 if (roleText) {
-  const rolePhrase = "MERN Full Stack Developer";
+  const rolePhrase = "Software Development Instructor";
   let index = 0;
 
   const typeRole = () => {
